@@ -1,5 +1,10 @@
 name: "Build and Publish Docker Images"
 
+# 需要写 packages 权限以便使用 GITHUB_TOKEN 推送 ghcr
+permissions:
+  contents: read
+  packages: write
+
 on:
   push:
     tags:
