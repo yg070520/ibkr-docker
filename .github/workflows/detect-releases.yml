@@ -102,11 +102,11 @@ jobs:
 
   build:
     name: Trigger Docker Build Action
+    uses: ./.github/workflows/docker.yml
+    with:
+      tag: ${{ needs.check-new-version.outputs.tag }}
     needs:
       - test-and-commit
       - check-new-version
     env:
       CHANNEL: ${{ inputs.channel || 'latest' }}
-    uses: ./.github/workflows/docker.yml
-    with:
-      tag: ${{ needs.check-new-version.outputs.tag }}
