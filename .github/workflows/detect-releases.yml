@@ -37,7 +37,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if gh release list | grep -qF '${{ steps.version.outputs.build_version }}-${{ env.CHANNEL }}'; then
-            echo "has_update=false" >> $GITHUB_OUTPUT
+            echo "has_update=true" >> $GITHUB_OUTPUT
           else
             echo "has_update=true" >> $GITHUB_OUTPUT
           fi
