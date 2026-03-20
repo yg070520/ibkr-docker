@@ -6,9 +6,6 @@ permissions:
   packages: write
 
 on:
-  push:
-    tags:
-      - "docker-*"
   workflow_call:
     inputs:
       tag:
