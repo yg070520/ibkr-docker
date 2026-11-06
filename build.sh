@@ -18,6 +18,6 @@ fi
 OUTPUT_DIR="./$CHANNEL"
 rm -rf "$OUTPUT_DIR"
 mkdir -p "$OUTPUT_DIR"
-cp -r image-files/ "$OUTPUT_DIR"
+cp -r image-files "$OUTPUT_DIR"
 
 CHANNEL="$CHANNEL" VERSION="$VERSION" envsubst '$CHANNEL $VERSION' <"Dockerfile.template" >"$OUTPUT_DIR/Dockerfile"
